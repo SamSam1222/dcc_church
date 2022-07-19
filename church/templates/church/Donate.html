@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}CONTRIBUTE TO THE GROWTH OF THE CHURCHS{% endblock %}
+
+{% block content %}
+
+<section class="text-center mt-4">
+  <h2 class="mb-5 font-weight-bold" style="color: green;">CONTRIBUTE TO THE GROWTH OF THE CHURCH</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8">
+                  <p class="grey-text">Please Kindly select the banks of your choice below to donate to the growth of the church</p>
+                </div>
+              </div>
+                <form action="{% url 'church:Donate' %}" method="post">
+              <div class="form-group">
+
+
+                  {% csrf_token %}
+                <div class="col-md-12">
+                    <div class="row">
+    {% for money2 in money %}
+    <div class="container">
+        <h2 class="card-title" style="color:blue"><b>{{money2.title}}</b></h2>
+      <img class="card-img-top" src="{{money2.image.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title" style="color:red"><b>{{money2.name}}</b></h2>
+        <p class="card-text" style="text-align: justify">{{money2.name2}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on {{money2.created_on}} by
+        <a href="Donate">{{money2.writer}}</a>
+      </div>
+    </div>
+    {% endfor %}
+
+            
+
+    
+</section>
+
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&#x2B06;Go Up</a><br>
+  </li>
+</ul>
+{%endblock%}
+

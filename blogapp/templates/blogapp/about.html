@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<section class="text-center mt-4">
+  <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">About C.A.C OJO/AWORI DCC</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8">
+                  <p class="grey-text">please kindly read through to understand more about OJO/AWORI</p>
+                </div>
+              </div>
+                <form action="{% url 'user_login' %}" method="post">
+              <div class="form-group">
+
+
+                  {% csrf_token %}
+                <div class="col-md-12">
+                    <div class="row">
+    {% for bodys in body %}
+    <div class="container">
+      <img class="card-img-top" src="{{bodys.image.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title" style="color:red"><b>{{bodys.title}}</b></h2>
+        <p class="card-text" style="text-align: justify">{{bodys.body}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on {{bodys.created_on}} by
+        <a href="About">{{bodys.writer}}</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="container">
+      <div class="card-body">
+        <h2 class="card-title" style="color:red"><b>ACCOUNT DEPARTMENT </b></h2>
+        <p class="card-text" style="text-align: justify">The Account Department
+          is to Assist the Executive Council in the preparation of Budget proposals and
+          Financial Statements as well as be responsible for the preparation
+          of Pay Vouchers and keep records on all financial transactions of the
+          church. It will on collaboration with the Finance and investment
+          Standing Committee explore investment opportunities and advise the 
+          Executive Council on such opportunities.
+        </p>
+      </div>
+    </div>
+        <div class="container">
+          <div class="card-body">
+            <h2 class="card-title" style="color:red"><b>LEGAL DEPARTMENT</b></h2>
+            <p class="card-text" style="text-align: justify">The Legal Departments shall advise the 
+              Church on all legal matters including proper acquisition of properties,
+              execution of contracts and employment related issues. It shall represent
+              the church in court and or any adjudicating body. It shall perform other 
+              legal functions that may be referred to it by the Executive Council.
+              Every Local, Circuit, Area or Territory having any legal issue concerning
+              landed properties, secession, integration with other churches, marriages,
+              inheritance etc. shall promptly refer the matter to the Executive Council for 
+              the attention of the Legal Department for an advise and prompt action. The Legal
+              Department in consultation with the Executive Council may organize training sessions for Ministers and other Church
+              workers on basic legal issues.
+            </p>
+          </div>
+        
+      </div>
+    
+</section>
+
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&larr; Go Up</a><br>
+  </li>
+</ul>
+{%endblock%}
+

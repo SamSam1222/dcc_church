@@ -1,0 +1,59 @@
+{% extends 'home.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{lessons.name}} {% endblock %}
+
+
+{% block content %}
+
+<section>
+  <div class="col-md-4 d-flex mb-5 justify-content-center">
+    <div class="card card-std text-center" style="width: 80rem; background-color: 	#191970;">
+      <div class="card-body text-center">
+
+            <h2 class="card-title" Style="color: white; font-family: serif; text-align: center"><b>{{lessons.title}}</b></h2>
+            <h3 class="card-title" Style="color: cyan; font-family: serif;  text-align: center">{{lessons.name}}</h3>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body2}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body3}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body4}}</p><br>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body5}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body6}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body7}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body8}}</p><br>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body9}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body10}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body11}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body12}}</p><br>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body13}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body14}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body15}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body16}}</p><br>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body17}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body18}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body19}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body20}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body21}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body22}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body23}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body24}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body25}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body26}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body27}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body28}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body29}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body30}}</p>
+            <p class="card-title" style="text-align: justify; color: white;">{{lessons.body31}}</p>
+             </div>
+    </div>
+  </div>
+  <p class="card-title" style="text-align: center; color: black;">Posted by {{lessons.created_by}} on {{lessons.created_at}}</p>
+     
+</section>
+
+
+<!-- Comments section -->
+
+{%endblock%}

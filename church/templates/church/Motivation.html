@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}WEEKLY PRAYERS AND MOTIVATIONS{% endblock %}
+
+{% block content %}
+
+<section class="text-center mt-4">
+  <h2 class="mb-5 font-weight-bold" style="color: green;">WEEKLY PRAYERS AND MOTIVATIONS</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8">
+                  <p class="grey-text">Please Kindly Say the Follwoing Prayers</p>
+                </div>
+              </div>
+                <form action="{% url 'church:Motivation' %}" method="post">
+              <div class="form-group">
+
+
+                  {% csrf_token %}
+    <div class="col-md-12">
+    <div class="row">
+    {% for motivation2 in motivation %}
+    <div class="container">
+      <img class="card-img-top" src="{{motivation2.image.url}}" alt="Card image cap">
+      <h2 class="card-title" style="color:blue"><b>{{motivation2.title}}</b></h2>
+      <div class="card-body">
+        <h3 class="card-text" style="color:black; text-align: left"><b>{{motivation2.body1}}</b></h3>
+        <h3 class="card-text" style="color:black; text-align: left"></b>{{motivation2.body2}}</b></h3>
+        <h3 class="card-text" style="color:black; text-align: left"></b>{{motivation2.body3}}</b></h3>
+        <h3 class="card-text" style="color:black; text-align: left"></b>{{motivation2.body4}}</b></h3>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on {{motivation2.created_on}} by
+        <a href="Motivation">{{motivation2.writer}}</a>
+      </div>
+    </div>
+    {% endfor %}
+
+            
+
+    
+</section>
+
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&#x2B06; Go Up</a><br>
+  </li>
+</ul>
+{%endblock%}
+

@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}History Of Christ Apostolic Church{% endblock %}
+
+{% block content %}
+
+<section class="text-center mt-4">
+  <h2 class="mb-5 font-weight-bold" style="color: green;">History Of Christ Apostolic Church</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8">
+                  <p class="grey-text">Kindly Read Through Carefully </p>
+                </div>
+              </div>
+                <form action="{% url 'church:Cac' %}" method="post">
+              <div class="form-group">
+
+
+                  {% csrf_token %}
+    <div class="col-md-12">
+    <div class="row">
+    {% for cac2 in cac %}
+    <div class="container">
+      <img width=400px, height=400px, class="card-img-top" src="{{cac2.image.url}}" alt="Card image cap">
+      <p class="card-title" style="color:blue"><b>{{cac2.title}}</b></h2>
+        <h3 class="card-text" style="color:black; text-align: left"><b>{{cac2.name}}</b></h3>
+      <div class="card-body">
+        <p class="card-text" style="color:black; text-align: justify"></p>
+
+        <div class="card-footer text-muted">
+            Posted on {{cac2.created_on}} by
+            <a href="Donate">{{cac2.writer}}</a>
+          </div>
+        </div>
+    {% endfor %}
+
+
+<ul class="pagination justify-content-center mb-4">
+    <li class="page-item">
+      <a class="page-link" href="#">&#x2B06;Go Up</a><br>
+    </li>
+  </ul>
+{% endblock%}

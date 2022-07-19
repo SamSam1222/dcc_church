@@ -1,0 +1,55 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}ADULT SUNDAY SCHOOL{% endblock %}
+
+{% block content %}
+
+<section class="text-center mt-4">
+  
+  <h2 class="mb-5 font-weight-bold" style="color: green;">ADULT SUNDAY SCHOOL</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8">
+                  <p class="grey-text">Please Kindly Check For The Latest Adult Sunday School</p>
+                </div>
+              </div>
+                <form action="{% url 'church:Adult' %}" method="post">
+              <div class="form-group">
+
+
+                  {% csrf_token %}
+                <div class="col-md-12">
+                    <div class="row">
+    {% for mens in men %}
+    <div class="container">
+        <h2 class="card-title" style="color:blue"><b>{{mens.name}}</b></h2>
+      <img class="card-img-top" src="{{mens.image.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title" style="color:red"><b>{{mens.title}}</b></h2>
+        <p class="card-text" style="text-align: justify">{{mens.body}}</p>
+        <p class="card-text" style="text-align: justify">{{mens.body2}}</p>
+        <p class="card-text" style="text-align: justify">{{mens.body3}}</p>
+        <h2 class="card-title" style="color:blue"><b>{{mens.name2}}</b></h2>
+        <p class="card-text" style="text-align: justify">{{mens.body4}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on {{mens.created_on}} by
+        <a href="Adult">{{mens.writer}}</a>
+      </div>
+    </div>
+    {% endfor %}
+
+            
+
+    
+</section>
+
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&#x2B06; Go Up</a><br>
+  </li>
+</ul>
+{%endblock%}
+

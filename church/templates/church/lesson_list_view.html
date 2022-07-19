@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block title %} {{subjects.name}} {% endblock %}
+
+{% block content %}
+<section id="best-features" class="text-center">
+              <h2 class="mb-5 mt-5 font-weight-bold" style="color:#ff5722;">C.A.C GOSPEL HYMN BOOK</h2>
+              <!-- class row for description-->
+              <div class="row d-flex justify-content-center mb-4">
+                <!-- class column -->
+                <div class="col-md-8 mb-5">
+                  <p class="grey-text">Please kindly select any week of your choice</p>
+                </div>
+              </div>
+              <!-- class row2 for cards -->
+              <div class="row d-flex justify-content-center mb-3">
+                {% for lesson in subjects.lessons.all %}
+                <div class="col-sm-4 mb-4">
+                  <div class="card box-shadow-hover">
+                    <div class="card-body">
+                      <h5 class="card-title">Hymn-{{lesson.position}}: {{lesson.name}}</h5>
+                      <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                      <a href="{% url 'church:lesson_detail' slug=lesson.slug subject=subjects.slug standard=lesson.Standard.slug %}">
+                        <button type="button" class="btn btn-outline-success"><span>LET SING</span></button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+            
+        
+</section>
+
+
+
+
+
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&larr; Go Up</a><br>
+  </li>
+</ul>
+{%endblock%}
