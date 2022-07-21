@@ -122,9 +122,8 @@
 
     <!-- Search Widget -->
     <div class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="card my-4" style="background-color: #FFF8DC;">
       <h5 class="card-header" style="background-color: #7FFFD4; text-align: center;"><b>&#128591;Weekly Prayers and Motivation</b></h5>
-      <div class="card-body" style="background-color: #FFF8DC;">
-        
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -180,45 +179,29 @@
     <div class="text-center ">
 
     <!-- Categories Widget -->
-    <div class="card my-4" style="background-color: #FFF8DC;">
+    
+    <div class="card my-4">
       <h5 class="card-header" style="background-color: #7FFFD4;"><b>Categories</b></h5>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-lg-6">
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="{% url 'Events' %}" type="button" class="btn btn-outline-danger"><b>DCC Upcoming Events</b></a>
-              </li><br>
-              <li>
-                <a href="{% url 'church:Program' %}" type="button" class="btn btn-outline-info"><b>DCC Yearly Program</b></a>
-              </li><br>
-              <li>
-                <a href="{% url 'church:Donate' %}" type="button" class="btn btn-outline-danger"><b>CONTRIBUTE</b></a>
-              </li>
-            </ul><br>
-          </div>
-          <div class="col-lg-6">
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="{% url 'church:Children' %}" type="button" class="btn btn-outline-warning"><b>Children Sunday School</b></a>
-              </li><br>
-              <li>
-                <a href="{% url 'church:Adult' %}" type="button" class="btn btn-outline-success"><b>Adult Sunday School</b></a>
-              </li><br>
-          {% if user.is_superuser %}
-              <li>
-                <a href="{% url 'admin:index' %}" type="button" class="btn btn-outline-danger"><b>UPDATE SYSTEM</b></a>
-              </li><br>
+      <img class="card-img" width=400px, height=400px src="https://i.postimg.cc/J04czDn0/nature4.jpg" alt="Card image">
+      <div class="card-img-overlay">
+             <br> <br><br> <p> <a href="{% url 'Events' %}" type="button" class="btn btn-primary"><b>DCC Upcoming Events</b></a></p>
+                <p><a href="{% url 'church:Program' %}" type="button" class="btn btn-warning"><b>DCC Yearly Program</b></a></p>
+                <p><a href="{% url 'church:Donate' %}" type="button" class="btn btn-info"><b>CONTRIBUTE</b></a></p>
+                <p><a href="{% url 'church:Children' %}" type="button" class="btn btn-light"><b>Children Sunday School</b></a></p>
+              
+                <p><a href="{% url 'church:Adult' %}" type="button" class="btn btn-primary"><b>Adult Sunday School</b></a></p>
+            {% if user.is_superuser %}
+                <p><a href="{% url 'admin:index' %}" type="button" class="btn btn-danger"><b>UPDATE SYSTEM</b></a></p>
               {% endif %}
-            </ul>
           </div>
-        </div>
-      </div>
     </div>
   </div>
+</div>
+</div>
+
+<div class="container">
     <div class="card my-4"  style="background-color: #FFF8DC;">
       <h5 class="card-header" style="background-color: #7FFFD4;"><b>&#128293;Weekly Give Away&#128293;</b></h5>
-      <div class="card-body">
         <img width=400px, height=400px src="https://i.postimg.cc/9MxZFtPr/giveAway.jpg" class="d-block w-100" alt="You Dont Have Data"><br>
         {% if user.is_authenticated %}
         <ul class="list-unstyled mb-0">
@@ -230,14 +213,15 @@
       <p style="color: blue; text-align: centers";><b>&#128591;Kindly Register and Quickly Check For Today's Give Away</b></p>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+
+<div class="container">       
+  
     <!-- Side Widget -->
     <div class="card my-4"  style="background-color:#FFF8DC;">
       <h5 class="card-header" style="background-color: #7FFFD4;"><b>Reach Us On Our Social Media Platform</b></h5>
       <div class="card-body">
-       
             <a href="{% url 'church:Program' %}"><img src="https://i.postimg.cc/cJqR647g/twitter.png" class="rounded-circle z-depth-0" alt="no image found" width="70" height="70"></a>
       
             <a href="{% url 'church:Donate' %}"><img src="https://i.postimg.cc/xT1CnyLc/instagram-5.png" class="rounded-circle z-depth-0" alt="no image found" width="70" height="70"></a>
@@ -248,9 +232,9 @@
           
       </div>
       <p><b>TAP THE ICON ABOVE TO VIEW OUR PAGE</b></p>
-    </div>
-
+    
   </div>
+
 </div>
 </div>
 </div>
